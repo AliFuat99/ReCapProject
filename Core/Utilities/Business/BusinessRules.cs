@@ -12,10 +12,12 @@ namespace Core.Utilities.Business
         {
             foreach (var logic in logics)
             {
-                if (!logic.Success)
-                    return logic;
+                if (!logic.Success)//Success değilse, logic hatalıysa
+                {
+                    return logic;//parametreyle gönderilen iş kurallarından başarısız olanı business a geri bildiriyoruz
+                }
             }
-            return new SuccessResult();
+            return null;
         }
     }
 }

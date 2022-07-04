@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Business.Constans
 {
-   public class PathConstants
+    public class StaticUploadRoot
     {
-        public static string ImagesPath = "wwwroot\\Upload\\Images\\";
+        public static string ImagePath = "wwwroot\\Uploads\\Images\\";
     }
 }
