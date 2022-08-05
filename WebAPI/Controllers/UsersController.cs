@@ -1,5 +1,5 @@
 ﻿using Business.Abstract;
-using Entities.Concrete;
+using Core.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -31,16 +31,8 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("getuserdetails")]
-        public IActionResult GetUserDetails()
-        {
-            var result = _userService.GetUserDetails();
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
+        
+        
 
         [HttpPost("add")]
         public IActionResult Add(User user)

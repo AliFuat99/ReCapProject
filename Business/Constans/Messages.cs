@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -29,6 +30,11 @@ namespace Business.Constans
         public static string UserInvalid = "Kullanıcı İsmi Geçersiz";
         public static string UserDeleted = "Kullanıcı Silindi";
         public static string UserUpdated = "Kullanıcı Güncellendi";
+        public static string UserNotFound = "Kullanıcı Bulunamadı";
+        public static string PasswordError = "Şifre Hatalı";
+        public static string UserAlreadyExists = "Bu Kullanıcı Zaten Mevcut";
+        public static string UserRegistered = "Kullanıcı Kayıt Oldu";
+        public static string AccessTokenCreated = "Access Token Oluşturuldu";
 
         public static string RentalAdded = "İlan Eklendi";
         public static string RentalListed = "İlanlar Listelendi";
@@ -50,5 +56,7 @@ namespace Business.Constans
 
         public static string MaintenanceTime = "Sistem Bakımda";
 
+        public static string SuccessfulLogin = "Giriş Başarıylar Yapıldı";
+        internal static string CarUpdated;
     }
 }

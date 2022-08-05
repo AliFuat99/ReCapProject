@@ -20,43 +20,20 @@ namespace Console
 
 
                 
-                UserManager userManager = new UserManager(new EfUserDal());
+                //UserManager userManager = new UserManager(new EfUserDal());
 
-                User user1 = new User { UserID = 1, UserFirstName = "Aaaa", UserLastName = "şssss", UserEmail = "sffsfaas@gmail.com", UserPassword = "asdajksdasd123" };
+                //User user1 = new User { UserID = 1, UserFirstName = "Aaaa", UserLastName = "şssss", UserEmail = "sffsfaas@gmail.com", UserPassword = "asdajksdasd123" };
 
-                userManager.Add(user1);
+                //userManager.Add(user1);
 
-                var result = userManager.GetUserDetails();
+                //var result = userManager.GetUserDetails();
                
-                if (result.Success)
-                {
-
-                    foreach (var user in result.Data)
-                    {
-                        System.Console.WriteLine(user.FirstName + " / " + user.LastName + "/" + user.CompanyName + "/" + user.UserId);
-                    }
-
-
-                }
-                else
-                {
-                    System.Console.WriteLine(result.Message);
-                }
-
-
-
-
-
-
-                //CarManager carManager = new CarManager(new EfCarDal());
-                //var result = carManager.GetCarDetails();
-
                 //if (result.Success)
                 //{
 
-                //    foreach (var car in result.Data)
+                //    foreach (var user in result.Data)
                 //    {
-                //      System.Console.WriteLine(car.CarName + " / " + car.BrandName + "/" + car.ColorName + "/" + car.DailyPrice);
+                //        System.Console.WriteLine(user.FirstName + " / " + user.LastName + "/" + user.CompanyName + "/" + user.UserId);
                 //    }
 
 
@@ -65,6 +42,29 @@ namespace Console
                 //{
                 //    System.Console.WriteLine(result.Message);
                 //}
+
+
+
+
+
+
+                ////CarManager carManager = new CarManager(new EfCarDal());
+                ////var result = carManager.GetCarDetails();
+
+                ////if (result.Success)
+                ////{
+
+                ////    foreach (var car in result.Data)
+                ////    {
+                ////      System.Console.WriteLine(car.CarName + " / " + car.BrandName + "/" + car.ColorName + "/" + car.DailyPrice);
+                ////    }
+
+
+                ////}
+                ////else
+                ////{
+                ////    System.Console.WriteLine(result.Message);
+                ////}
 
             }
 

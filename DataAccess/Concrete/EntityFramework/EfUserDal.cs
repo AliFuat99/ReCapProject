@@ -1,26 +1,27 @@
 ﻿using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
-using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Core.Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
 
 {
     public class EfUserDal : EfEntityRepositoryBase<User, Context>, IUserDal
     {
-        public List<UserDetailDto> GetUserDetailDto()
+        public List<OperationClaim> GetClaims(User user)
         {
-            using (Context context = new Context())
+            using (var context = new Context())
             {
-                var result = from u in context.Users
-                             join c in context.Customers
-                             on u.UserID equals c.CustomerID
-                             select new UserDetailDto { UserId = u.UserID, FirstName = u.UserFirstName, LastName = u.UserLastName, CompanyName = c.CompanyName };
-                return result.ToList();
+                var result = from operationClaim in context.OperationClaims
+                             join userOperationClaim in context.UserOperationClaims
+                             on operationClaim.OperationClaimId equals userOperationClaim.OperationClaimId
+                             where userOperationClaim.UserId == user.UserID
+                             select new OperationClaim {OperationClaimId = operationClaim.OperationClaimId, Name = operationClaim.Name };
+                             return result.ToList();
             }
         }
     }

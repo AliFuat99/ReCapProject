@@ -3,6 +3,7 @@ using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
 using Business.Concrete;
 using Castle.DynamicProxy;
+using Core.Security.Jwt;
 using Core.Utilities.Helpers.Abstract;
 using Core.Utilities.Helpers.Concrete;
 using Core.Utilities.Interceptors;
@@ -23,6 +24,14 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<CarImageManager>().As<ICarImageService>().SingleInstance();
             builder.RegisterType<EfCarImageDal>().As<ICarImageDal>().SingleInstance();
+
+            builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
+            builder.RegisterType<EfUserDal>().As<IUserDal>().SingleInstance();
+
+            builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();
+
+
 
             builder.RegisterType<FileHelperManager>().As<IFileHelper>().SingleInstance();
 
